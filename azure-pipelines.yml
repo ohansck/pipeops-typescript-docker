@@ -40,3 +40,13 @@ stages:
         tags: |
           $(tag)
           latest
+    - task: AzureRmWebAppDeployment@4
+      inputs:
+        ConnectionType: 'AzureRM'
+        azureSubscription: 'Azure subscription 1(dd639a63-95d4-4d1c-b1e9-b942b52e5f33)'
+        appType: 'webAppContainer'
+        WebAppName: 'haha-2'
+        DockerNamespace: 'tsapp1.azurecr.io'
+        DockerRepository: 'confirm'
+        DockerImageTag: |
+          $(tag)
